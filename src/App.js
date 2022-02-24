@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./App.css";
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
   }
 
 
-  if(moviesList.length == 0){
+  if(moviesList.length === 0){
     return(
       <div className="container">
         <h1>JETFLIX</h1>
@@ -71,7 +71,7 @@ function App() {
                 <li id={`movie-${key}`} key={key++}>
 
                   
-                    <img className={movie.Poster=="N/A"? "notImage": "movieImage"} alt={movie.Title} src={movie.Poster=="N/A"? "./assets/video.png": movie.Poster}/>
+                    <img className={movie.Poster==="N/A"? "notImage": "movieImage"} alt={movie.Title} src={movie.Poster==="N/A"? "./assets/video.png": movie.Poster}/>
                     <div className="dataMovie">
                       <h3>{movie.Title}</h3>
                       <p>{movie.Year}</p>
