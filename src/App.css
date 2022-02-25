@@ -11,16 +11,16 @@
   align-items: center;
   margin-top:10px
 }
-h1{
+.tittle{
   font-weight: 500;
   font-size:7vh;
   color: white;
   transition: all 0.2s;
 }
-h1::first-letter{
+.tittle::first-letter{
   color: rgb(126,84,222);
 }
-h1:hover{
+.tittle:hover{
   transform: scale(1.2);
 }
 .dataMovie{
@@ -92,7 +92,7 @@ input:focus-visible{
   height: 100%;
   padding: 1rem;
 }
-.movieImage{
+.allMoviesImage{
   height: 100%;
   width: 100%;
   border-radius:0.2rem;
@@ -103,7 +103,7 @@ input:focus-visible{
 }
 
 
-.movieImage:hover{
+.allMoviesImage:hover{
   opacity: 0.1;
   z-index: 2
 }

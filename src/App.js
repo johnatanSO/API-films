@@ -11,31 +11,37 @@ function App() {
 
   let key = 0;
 
-  let APIurl = `https://www.omdbapi.com/?s=${movieName}&apikey=604ab899&page=${page}`;
+  
 
-   useEffect(()=>{
-    
-    fetch(APIurl)
-      .then((res) => {
-        return res.json();
-      })
-      .then((resposta) => {
-        console.log(resposta)
-        if(resposta.Error === "Incorrect IMDb ID."){
-          
-          setMoviesList([])
-        }
-        else if (resposta.Response === "False") {
-          setMoviesList([]);
-          setError(resposta.Error);
-        } else {
-          setMoviesList(resposta.Search);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    useEffect(()=>{
+    if(moviesList.length !== 0){
+      setTimeout(()=>{
+        getMoviesApi()
+      },200)
+    } 
   },[page]) 
+  
+  function getMoviesApi(){
+    let APIurl = `https://www.omdbapi.com/?s=${movieName}&apikey=604ab899&page=${page}`;
+    
+      fetch(APIurl)
+        .then((res) => {
+          return res.json();
+        })
+        .then((resposta) => {
+
+           if (resposta.Response === "False") {
+            setMoviesList([]);
+            setError(resposta.Error);
+          } else {
+            setMoviesList(resposta.Search);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    
+  }
 
 
 
@@ -43,7 +49,6 @@ function App() {
 
   function nextPage() {
     setPage(page+1);
-    console.log(page)
   }
   function previousPage() {
     if(page <= 1){
@@ -53,25 +58,12 @@ function App() {
     }
   }
 
-  async function searchMovies(event) {
+ function searchMovies(event) {
     event.preventDefault();
-    await setPage(1)
+
+    setPage(1)
     
-    fetch(APIurl)
-      .then((res) => {
-        return res.json();
-      })
-      .then((resposta) => {
-         if (resposta.Response === "False") {
-          setMoviesList([]);
-          setError(resposta.Error);
-        } else {
-          setMoviesList(resposta.Search);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    getMoviesApi()
   }
 
   function getMovieName(event) {
@@ -94,7 +86,7 @@ function App() {
   } else if (moviesList.length === 0) {
     return (
       <div className="container">
-        <h1>JETFLIX</h1>
+        <h1 classname="title">JETFLIX</h1>
         <InputSearch
           getMovieName={getMovieName}
           searchMovies={searchMovies}
@@ -119,7 +111,7 @@ function App() {
 
                   <img
                     className={
-                      movie.Poster === "N/A" ? "notImage" : "movieImage"
+                      movie.Poster === "N/A" ? "notImage" : "allMoviesImage"
                     }
                     alt={movie.Title}
                     src={
