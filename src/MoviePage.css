@@ -10,6 +10,18 @@
   align-items: center;
   justify-content: center;
 }
+
+.backArrow{
+  position:fixed;
+  filter: invert(1);
+  top: 30px;
+  left: 30px;
+  transform: rotate(180deg);
+  width: 20px;
+  cursor: pointer;
+  
+}
+
 .movieTitle{
   font-size: 3.75rem;
   font-weight: 700;

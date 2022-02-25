@@ -13,10 +13,11 @@ function MoviePage(){
         setMovie(resposta)
         console.log(resposta)
       })
-  },[])
+  },[api])
 
   return(
     <div className="content">
+      <img alt="backarrow" className="backArrow" src="./assets/arrow.png"/>
       <div className="movieDataContainer">
 
         <div className="imagePoster">
@@ -28,7 +29,7 @@ function MoviePage(){
           
           <h1 className="movieTitle">{movie.Title}</h1>
 
-          <div className="rate"><img className="logoIMDB" src="./assets/logoIMDB.svg"/>{movie.imdbRating}/10</div>
+          <div className="rate"><img alt="IMdb rate" className="logoIMDB" src="./assets/logoIMDB.svg"/>{movie.imdbRating}/10</div>
 
 
         </div>

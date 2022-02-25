@@ -86,7 +86,7 @@ function App() {
   } else if (moviesList.length === 0) {
     return (
       <div className="container">
-        <h1 classname="title">JETFLIX</h1>
+        <h1 className="title">JETFLIX</h1>
         <InputSearch
           getMovieName={getMovieName}
           searchMovies={searchMovies}
