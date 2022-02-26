@@ -3,24 +3,35 @@
   margin: 0;
   box-sizing: border-box;
 }
+h1{
+  color: white;
+}
+
+.totalResults{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .buttonsPages{
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  padding: 0px 30%;
+
+  justify-content: space-between;
+  padding: 0px ;
   align-items: center;
   margin-top:10px
 }
-.tittle{
+.titleMain{
   font-weight: 500;
   font-size:7vh;
   color: white;
   transition: all 0.2s;
+  cursor: pointer;
 }
-.tittle::first-letter{
+.titleMain::first-letter{
   color: rgb(126,84,222);
 }
-.tittle:hover{
+.titleMain:hover{
   transform: scale(1.2);
 }
 .dataMovie{

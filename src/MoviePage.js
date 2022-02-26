@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from "react";
+import {useNavigate, useParams, useHistory} from "react-router-dom"
 import './MoviePage.css'
 
 function MoviePage(){
-  let api = `https://www.omdbapi.com/?i=tt0944947&apikey=604ab899&`
+  const navigate = useNavigate()
+  const { id } = useParams()
+
   const [movie, setMovie] = useState("");
   useEffect(()=>{
-    fetch(api)
+    fetch(`https://www.omdbapi.com/?i=${id}&apikey=604ab899&`)
       .then((res)=>{
         return res.json()
      })
@@ -13,11 +16,12 @@ function MoviePage(){
         setMovie(resposta)
         console.log(resposta)
       })
-  },[api])
+  },[])
 
   return(
     <div className="content">
-      <img alt="backarrow" className="backArrow" src="./assets/arrow.png"/>
+      <div><img onClick={()=>navigate("/")}  alt="backArrow" className="backArrow" src="../assets/arrow.png"/></div>
+      
       <div className="movieDataContainer">
 
         <div className="imagePoster">
@@ -29,7 +33,7 @@ function MoviePage(){
           
           <h1 className="movieTitle">{movie.Title}</h1>
 
-          <div className="rate"><img alt="IMdb rate" className="logoIMDB" src="./assets/logoIMDB.svg"/>{movie.imdbRating}/10</div>
+          <div className="rate"><img alt="IMdb rate" className="logoIMDB" src="../assets/logoIMDB.svg"/>{movie.imdbRating}/10</div>
 
 
         </div>

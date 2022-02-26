@@ -4,11 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MoviePage from './MoviePage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <MoviePage />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/moviePage/:id" element={<MoviePage />} />
+        <Route path="*" element={<h1>Not found! 404</h1>} />
+      </Routes>
+    </BrowserRouter>
+      
   </React.StrictMode>,
   document.getElementById('root')
 );
