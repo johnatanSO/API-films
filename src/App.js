@@ -19,9 +19,10 @@ function App() {
 
     useEffect(()=>{
     if(moviesList.length !== 0){
-      setTimeout(()=>{
+      let timer = setTimeout(()=>{
         getMoviesApi()
       },200)
+      return ()=> clearTimeout(timer)
     } 
   },[page]) 
   
@@ -47,10 +48,6 @@ function App() {
         });
     
   }
-
-
-
-
 
   function nextPage() {
     
