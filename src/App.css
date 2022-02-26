@@ -27,6 +27,7 @@ h1{
   color: white;
   transition: all 0.2s;
   cursor: pointer;
+  filter: drop-shadow(0px 0px 5px rgb(126,84,222));
 }
 .titleMain::first-letter{
   color: rgb(126,84,222);
@@ -52,18 +53,24 @@ form{
   align-items: center;
   margin-bottom: 1rem;
   margin-top: 3%;
+  box-shadow: 2px 2px 7px rgb(0, 0, 0);
 }
 input{
   width:100%;
   height:100%;
   outline: rgb(126,84,222);
-  padding:0px 10px;
+  color: rgb(48, 48, 48);
+  padding: 0px 12px;
   outline:none;
   border: none;
   font-size: 1.3rem;
+  
 }
 input:focus-visible{
   border: 1px solid rgb(126,84,222);
+}
+input::placeholder{
+  font-size: 1rem
 }
 .btnSearch{
   width: 80px;
