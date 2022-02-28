@@ -1,0 +1,14 @@
+.totalResults{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.buttonsPages{
+  width: 100%;
+  display: flex;
+
+  justify-content: space-between;
+  padding: 0px ;
+  align-items: center;
+  margin-top:10px
+}

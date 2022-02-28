@@ -1,4 +1,5 @@
 import React from 'react' 
+import "./ContentMovies.css"
 
 function ContentMovies(props){
   return(

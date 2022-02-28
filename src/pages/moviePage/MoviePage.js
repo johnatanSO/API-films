@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {useNavigate, useParams, useHistory} from "react-router-dom"
+import {useNavigate, useParams} from "react-router-dom"
 import './MoviePage.css'
 import Skeleton from 'react-loading-skeleton'
 

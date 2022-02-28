@@ -1,4 +1,5 @@
 import React from "react";
+import "./inputSearch.css"
 
 function InputSearch(props){
   return(

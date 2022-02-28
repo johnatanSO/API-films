@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import MovieNotFound from "./MovieNotFound";
-import InputSearch from "./InputSearch";
+import MovieNotFound from "../../components/contentError/MovieNotFound";
+import InputSearch from "../../components/contentInput/InputSearch";
 import { useNavigate } from "react-router-dom";
-import ContentMovies from "./ContentMovies"
+import ContentMovies from "../../components/contentMovies/ContentMovies"
+import ButtonsContent from "../../components/contentButtons/ButtonsContent"
 
 function App() {
   const [movieName, setMovieName] = useState("");
@@ -25,9 +26,14 @@ function App() {
 
   async function searchMovies(event) {
     event.preventDefault();
-    await setPage(1);
-
-    getMoviesApi();
+    if(movieName === ""){
+      return(
+        <h2>Procure um filme por favor!</h2>
+      )
+    }else{
+      await setPage(1);
+      getMoviesApi();
+    }
   }
 
   function getMoviesApi() {
@@ -38,17 +44,16 @@ function App() {
         return res.json();
       })
       .then((resposta) => {
-        if (movieName === "") {
-          setMoviesList([]);
-        } else if (resposta.Response === "False") {
+        if (resposta.Response === "False") {
           setError(resposta.Error);
+          setShowMovies(false)
         } else {
           setMoviesList(resposta.Search);
           setTotalResults(resposta.totalResults);
           setShowMovies(true)
         }
         setResponse(resposta)
-        console.log(response)
+        
       })
       .catch((err) => {
         console.log(err);
@@ -87,7 +92,8 @@ function App() {
       }
 
       <ContentMovies navigate={navigate} moviesList={moviesList} showMovies={showMovies} />
-      
+
+      <ButtonsContent showMovies={showMovies} nextPage={nextPage} totalResults={totalResults} totalPages={totalPages} page={page} previousPage={previousPage} />
     </div>
   )
 }

@@ -1,4 +1,9 @@
-<div className="buttonsPages">
+import React from 'react'
+import "./Buttons.css"
+
+function ButtonsContent(props){
+  return( 
+    <div className={props.showMovies===true? "buttonsPages showMovies": "hiddenMovies"}>
             <button
               style={{
                 backgroundColor: "transparent",
@@ -9,15 +14,15 @@
 
                 cursor: "pointer",
               }}
-              onClick={previousPage}
+              onClick={props.previousPage}
             >
               Previous
             </button>
             <div className="totalResults">
               <span>
-                {page}/{totalPages}
+                {props.page}/{props.totalPages}
               </span>
-              <span>({totalResults} results)</span>
+              <span>({props.totalResults} results)</span>
             </div>
 
             <button
@@ -30,8 +35,14 @@
 
                 cursor: "pointer",
               }}
-              onClick={nextPage}
+              onClick={props.nextPage}
             >
               Next
             </button>
           </div>
+
+  )
+}
+
+
+export default ButtonsContent

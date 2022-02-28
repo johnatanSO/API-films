@@ -1,4 +1,5 @@
 import react from 'react';
+import "./MovieNotFound.css"
 function MovieNotFound(props){
   return (
     <div className="notFoundMovie">
