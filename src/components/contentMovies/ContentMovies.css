@@ -55,3 +55,39 @@ li{
   width: 140px;
   pointer-events: none;
 }
+
+.backward img{
+  width: 20px;
+  background-color: transparent;
+}
+.backward{
+  background-color: transparent;
+  border: none;
+  filter: invert(1);
+  transform: rotateY(180deg);
+  left: 3vw;
+  transition: 0.2s ease-out
+}
+.backward:hover{
+  transform: rotateY(180deg) scale(1.2)
+}
+.forward img{
+  width: 20px;
+  background-color: transparent;
+}
+.forward{
+  background-color: transparent;
+  border: none;
+  filter: invert(1);
+  right: 3vw;
+  transition: 0.2s ease-out
+}
+.forward:hover{
+  transform: scale(1.2)
+}
+
+.backward, .forward{
+  position: absolute;
+  cursor: pointer;
+  padding:0.5rem
+}

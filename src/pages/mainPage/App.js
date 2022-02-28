@@ -4,7 +4,6 @@ import MovieNotFound from "../../components/contentError/MovieNotFound";
 import InputSearch from "../../components/contentInput/InputSearch";
 import { useNavigate } from "react-router-dom";
 import ContentMovies from "../../components/contentMovies/ContentMovies"
-import ButtonsContent from "../../components/contentButtons/ButtonsContent"
 
 function App() {
   const [movieName, setMovieName] = useState("");
@@ -61,6 +60,7 @@ function App() {
   }
 
   function nextPage() {
+    console.log('for')
     if (page === totalPages) {
       setPage(totalPages);
     } else {
@@ -68,6 +68,7 @@ function App() {
     }
   }
   function previousPage() {
+    console.log('prev')
     if (page <= 1) {
       setPage(1);
     } else {
@@ -91,9 +92,9 @@ function App() {
         </>
       }
 
-      <ContentMovies navigate={navigate} moviesList={moviesList} showMovies={showMovies} />
+      <ContentMovies previousPage={previousPage} nextPage={nextPage} navigate={navigate} moviesList={moviesList} showMovies={showMovies} />
 
-      <ButtonsContent showMovies={showMovies} nextPage={nextPage} totalResults={totalResults} totalPages={totalPages} page={page} previousPage={previousPage} />
+      {/* <ButtonsContent showMovies={showMovies} nextPage={nextPage} totalResults={totalResults} totalPages={totalPages} page={page} previousPage={previousPage} /> */}
     </div>
   )
 }

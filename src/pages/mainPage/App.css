@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 .showMovies {
-  display: block;
+  display:flex;
+  align-items: center;
 }
 .hiddenMovies {
   display: none;
