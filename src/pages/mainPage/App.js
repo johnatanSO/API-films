@@ -14,30 +14,28 @@ function App() {
   const navigate = useNavigate();
   const [response, setResponse] = useState("");
   const [showMovies, setShowMovies] = useState(false);
-  
-
 
   let totalPages = Math.ceil(totalResults / 10);
 
-  useEffect(async () => {
+  useEffect(() => {
     if (moviesList.length > 0) {
-       await getMoviesApi();
+      getMoviesApi(page);
     }
   }, [page]);
 
   function searchMovies(event) {
-    
+    setPage(1);
+
     event.preventDefault();
     if (movieName === "") {
       return <h2>Procure um filme por favor!</h2>;
     } else {
-      setPage(1);
-      getMoviesApi();
+      getMoviesApi(1);
     }
   }
 
-  async function getMoviesApi() {
-    await fetch(
+  function getMoviesApi(page) {
+     fetch(
       `https://www.omdbapi.com/?s=${movieName}&apikey=604ab899&page=${page}`
     )
       .then((res) => {
@@ -60,7 +58,6 @@ function App() {
   }
 
   function nextPage() {
-   
     if (page === totalPages) {
       setPage(totalPages);
     } else {
@@ -68,7 +65,6 @@ function App() {
     }
   }
   function previousPage() {
-    
     if (page <= 1) {
       setPage(1);
     } else {
