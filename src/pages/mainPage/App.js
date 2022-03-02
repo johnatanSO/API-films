@@ -19,9 +19,9 @@ function App() {
 
   let totalPages = Math.ceil(totalResults / 10);
 
-  useEffect(() => {
+  useEffect(async () => {
     if (moviesList.length > 0) {
-      getMoviesApi();
+       await getMoviesApi();
     }
   }, [page]);
 
