@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+<h1 align="center"> 🎬 JETFLIX </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3> 💻 Sobre o projeto</h3>
 
-## Available Scripts
+<p>Essa é um projeto feito com React, que usa dados da RESTful API OMDb (https://www.omdbapi.com/) para listar informações de filmes, séries e jogos baseado no .</p>
+<p>📝 O sistema possui as funcionalidades de:</p>
+ <li>Pesquisar filmes, séries ou jogos</li>
+ <li>Ver informações</li>
+ <br>
+ 
+ <h2>🖼 Imagem da tela principal: </h2>
+<img width="80%" src="public/assets/images-for-readme/Todo-screenshot.png">
+ 
+ <h2>🖼 Imagem da tela para edição do item: </h2>
+<img width="80%" src="public/assets/images-for-readme/edit-task.png">
+ 
+ <h2>🖼 Imagem dos itens completos: </h2>
+<img width="80%" src="public/assets/images-for-readme/tasks-done.png">
+  
 
-In the project directory, you can run:
+<h2>🚀 Tecnologias utilizadas: </h2>
 
-### `npm start`
+<div style="display: inline_block">
+  <img align="center" alt="John-HTML" height="50" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="John-CSS" height="50" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <img align="center" alt="John-JS" height="50" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="John-ReactJS" height="50" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+</div>
+<br>
+<h2>👷 Como testar? </h2>
+<h3>Entre com o seguinte link: </h3>
+<a href="https://api-films.vercel.app/">https://api-films.vercel.app/</a>
+<h3>Ou</h3>
+<li> Clone o repositório com: git clone https://github.com/johnatanSO/API-films.git
+<li> Entre em uma IDE de sua preferência
+<li> Execute o npm install, npm install react-router-dom para instalar as dependências
+<li> Execute o npm start para iniciar o servidor local
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br>
+ 
+<div>
+ <h2>🎓 Autores</h2>
+ <h3>Feito com o 💜 by <a href="https://github.com/johnatanSO" target="_blank">Johnatan Santos</a></h3>
+</div>
