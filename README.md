@@ -9,13 +9,13 @@
  <br>
  
  <h2>🖼 Imagem da tela principal: </h2>
-<img width="80%" src="public/assets/images-for-readme/Todo-screenshot.png">
+<img width="80%" src="public/assets/images-for-readme/main-page.png">
  
- <h2>🖼 Imagem da tela para edição do item: </h2>
-<img width="80%" src="public/assets/images-for-readme/edit-task.png">
+ <h2>🖼 Imagem da tela de busca: </h2>
+<img width="80%" src="public/assets/images-for-readme/pagina-search.png">
  
- <h2>🖼 Imagem dos itens completos: </h2>
-<img width="80%" src="public/assets/images-for-readme/tasks-done.png">
+ <h2>🖼 Imagem da tela do filme: </h2>
+<img width="80%" src="public/assets/images-for-readme/movie-page.png">
   
 
 <h2>🚀 Tecnologias utilizadas: </h2>
