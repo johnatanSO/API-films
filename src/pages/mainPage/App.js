@@ -3,7 +3,7 @@ import "./App.css";
 import MovieNotFound from "../../components/contentError/MovieNotFound";
 import InputSearch from "../../components/contentInput/InputSearch";
 import { useNavigate } from "react-router-dom";
-import ContentMovies from "../../components/contentMovies/ContentMovies"
+import ContentMovies from "../../components/contentMovies/ContentMovies";
 
 function App() {
   const [movieName, setMovieName] = useState("");
@@ -12,8 +12,10 @@ function App() {
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
   const navigate = useNavigate();
-  const [response, setResponse] = useState('')
-  const [showMovies, setShowMovies] = useState(false)
+  const [response, setResponse] = useState("");
+  const [showMovies, setShowMovies] = useState(false);
+  
+
 
   let totalPages = Math.ceil(totalResults / 10);
 
@@ -23,20 +25,19 @@ function App() {
     }
   }, [page]);
 
-  async function searchMovies(event) {
+  function searchMovies(event) {
+    
     event.preventDefault();
-    if(movieName === ""){
-      return(
-        <h2>Procure um filme por favor!</h2>
-      )
-    }else{
-      await setPage(1);
+    if (movieName === "") {
+      return <h2>Procure um filme por favor!</h2>;
+    } else {
+      setPage(1);
       getMoviesApi();
     }
   }
 
-  function getMoviesApi() {
-    fetch(
+  async function getMoviesApi() {
+    await fetch(
       `https://www.omdbapi.com/?s=${movieName}&apikey=604ab899&page=${page}`
     )
       .then((res) => {
@@ -45,14 +46,13 @@ function App() {
       .then((resposta) => {
         if (resposta.Response === "False") {
           setError(resposta.Error);
-          setShowMovies(false)
+          setShowMovies(false);
         } else {
           setMoviesList(resposta.Search);
           setTotalResults(resposta.totalResults);
-          setShowMovies(true)
+          setShowMovies(true);
         }
-        setResponse(resposta)
-        
+        setResponse(resposta);
       })
       .catch((err) => {
         console.log(err);
@@ -60,7 +60,7 @@ function App() {
   }
 
   function nextPage() {
-    console.log('for')
+   
     if (page === totalPages) {
       setPage(totalPages);
     } else {
@@ -68,7 +68,7 @@ function App() {
     }
   }
   function previousPage() {
-    console.log('prev')
+    
     if (page <= 1) {
       setPage(1);
     } else {
@@ -81,22 +81,26 @@ function App() {
     setMovieName(text);
   }
 
-  return(
+  return (
     <div className="container">
       <h1 className="titleMain">JETFLIX</h1>
       <InputSearch getMovieName={getMovieName} searchMovies={searchMovies} />
-      {response.Response === "False" &&
+      {response.Response === "False" && (
         <>
           <h1>Error</h1>
           <MovieNotFound error={error}></MovieNotFound>
         </>
-      }
+      )}
 
-      <ContentMovies previousPage={previousPage} nextPage={nextPage} navigate={navigate} moviesList={moviesList} showMovies={showMovies} />
-
-      {/* <ButtonsContent showMovies={showMovies} nextPage={nextPage} totalResults={totalResults} totalPages={totalPages} page={page} previousPage={previousPage} /> */}
+      <ContentMovies
+        previousPage={previousPage}
+        nextPage={nextPage}
+        navigate={navigate}
+        moviesList={moviesList}
+        showMovies={showMovies}
+      />
     </div>
-  )
+  );
 }
 
 export default App;
