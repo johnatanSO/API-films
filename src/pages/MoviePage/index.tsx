@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+/* import React, { useState, useEffect } from 'react'
 import style from './MoviePage.module.scss'
-import Skeleton from 'react-loading-skeleton'
 
 function ComponentSkeleton() {
   return (
@@ -98,3 +96,8 @@ function MoviePage() {
 }
 
 export default MoviePage
+ */
+
+export function MoviePage() {
+  return <></>
+}
