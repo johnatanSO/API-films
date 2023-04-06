@@ -1,0 +1,50 @@
+.form{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  width: 70%;
+  height: 45px;
+  box-shadow: 2px 2px 7px rgb(0, 0, 0);
+  margin: 5% auto;
+  box-shadow: 0px 0px 20px 5px rgba(125, 84, 222, 0.104);
+
+  input{
+    flex: 1;
+    height: 100%;
+    background: rgb(29, 29, 29);
+    padding: 7px 17px;
+    outline:none;
+    border: none;
+    font-size: 1rem;
+    transition: box-shadow .2s;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    outline: 1px solid rgba(255, 255, 255, 0.274);
+    transition: outline .2s;
+
+    &:focus-visible{
+      outline: 1px solid rgb(126,84,222);
+    }
+  }
+  
+  button{
+    outline: 1px solid rgb(126,84,222);
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    background-color:rgb(126,84,222);
+    color:white;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 0px 20px;
+    line-height: 1;
+    transition: filter .2s;
+
+    &:hover{
+      filter: brightness(0.8);
+    }
+  }
+}

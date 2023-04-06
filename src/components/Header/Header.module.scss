@@ -1,0 +1,11 @@
+@import "../../../styles/colors.scss";
+
+.headerContainer{
+  background: rgb(28, 28, 28);
+  padding: 15px 20px;
+  line-height: 1;
+  
+  h1::first-letter{
+    color: $primary-color;
+  }
+}
