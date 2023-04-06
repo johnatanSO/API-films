@@ -22,11 +22,11 @@ export function InputSearch() {
           page,
         },
       })
-      .then((res) => {
+      .then((res: any) => {
         console.log(res)
         setMovies(res?.data?.Search)
       })
-      .catch((err) => {
+      .catch((err: any) => {
         console.log(err)
       })
   }
