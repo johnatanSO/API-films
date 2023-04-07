@@ -1,0 +1,69 @@
+.movieItem {
+  border-radius: 15px;
+  padding: 1rem;
+
+  width: 320px;
+  height: 510px;
+  background: rgb(33, 33, 33);
+  box-shadow: 1px 5px 12px rgba(0, 0, 0, 0.316);
+  cursor: pointer;
+  transition: filter 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  text-decoration: none;
+  
+  .movieImage{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  .notFoundFilmContainer{
+    width: 100%;
+    margin-top:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    color: rgba(255, 255, 255, 0.676);
+
+    .notFoundIcon{
+      font-size: 5rem;
+    }
+  }
+
+  &:hover{
+    filter: brightness(.8);
+  }
+
+  .movieTitleContainer{
+    color: rgba(255, 255, 255, 0.838);
+    margin-top: auto !important;
+
+    h3{
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; 
+      
+      font-weight: 600;
+    }
+  }
+}
+
+@keyframes slideMovies {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width:935px){
+  .movieItem{
+    width: 100% !important;
+  }
+}

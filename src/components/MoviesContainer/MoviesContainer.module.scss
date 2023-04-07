@@ -1,6 +1,9 @@
 .containerMovies {
   display: flex;
   justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
   flex-wrap: wrap;
   max-width: 80%;
   gap: 30px;
@@ -17,7 +20,9 @@
 @media (max-width:935px){
   .containerMovies{
     background: transparent;
+    max-width: 100%;
     justify-content: center;
+    box-shadow: none;
   }
 }
 
