@@ -4,7 +4,8 @@ import React, { useContext, useState } from 'react'
 import style from './InputSearch.module.scss'
 
 export function InputSearch() {
-  const { setMovies, setError, setPagination, pagination } = useContext(MoviesContext)
+  const { setMovies, setError, setPagination, pagination } =
+    useContext(MoviesContext)
   const [searchStringMovie, setSearchStringMovie] = useState<string>('')
   const [loadingMovies, setLoadingMovies] = useState<boolean>(false)
 
