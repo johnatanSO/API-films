@@ -23,27 +23,30 @@ export function MovieDetailsContainer({
             </h3>
           </div>
 
-          <h1 className={style.movieTitle}>{movieData?.Title}</h1>
+          <h1 className={style.movieTitle}>{movieData?.Title || '--'}</h1>
 
-          <div className={style.rate}>{movieData?.imdbRating}/10</div>
+          <div className={style.rate}>
+            <h5>IMDb</h5>
+            <span>{movieData?.imdbRating || '--'}/10</span>
+          </div>
 
           <div className={style.plot}>
             <h3>Plot</h3>
-            {movieData?.Plot}
+            {movieData?.Plot || '--'}
           </div>
 
           <div className={style.infosContainer}>
             <div className={style.cardInfo}>
               <h3>Cast</h3>
-              {movieData?.Actors}
+              {movieData?.Actors || '--'}
             </div>
             <div className={style.cardInfo}>
               <h3>Genre</h3>
-              {movieData?.Genre}
+              {movieData?.Genre || '--'}
             </div>
             <div className={style.cardInfo}>
               <h3>Director</h3>
-              {movieData?.Director}
+              {movieData?.Director || '--'}
             </div>
           </div>
         </div>

@@ -4,14 +4,16 @@ import React, { useContext, useState } from 'react'
 import style from './InputSearch.module.scss'
 
 export function InputSearch() {
-  const { setMovies } = useContext(MoviesContext)
+  const { setMovies, setError, setPagination, pagination } = useContext(MoviesContext)
   const [searchStringMovie, setSearchStringMovie] = useState<string>('')
+  const [loadingMovies, setLoadingMovies] = useState<boolean>(false)
 
   function searchMovies(event: any) {
     event.preventDefault()
     if (!searchStringMovie) return undefined
+    setLoadingMovies(true)
 
-    const page = 1
+    const page = pagination.page
     const URL = ''
 
     api
@@ -23,11 +25,28 @@ export function InputSearch() {
         },
       })
       .then((res: any) => {
-        console.log(res)
-        setMovies(res?.data?.Search)
+        if (res.data.Response === 'True') {
+          setMovies(res?.data?.Search)
+          setPagination({
+            totalResults: res.data.totalResults,
+            totalPages:
+              Number(res.data.totalResults) / res?.data?.Search.length,
+          })
+        } else {
+          setMovies([])
+          if (res.data.Error === 'Movie not found!') {
+            setError({
+              message: 'Infelizmente nenhum filme foi encontrado :(',
+              secondaryMessage: 'Tente novamente',
+            })
+          }
+        }
       })
       .catch((err: any) => {
-        console.log(err)
+        console.log('por', err)
+      })
+      .finally(() => {
+        setLoadingMovies(false)
       })
   }
   return (
@@ -40,7 +59,11 @@ export function InputSearch() {
         }}
         value={searchStringMovie}
       />
-      <button type="submit" className={style.btnSearch}>
+      <button
+        disabled={loadingMovies}
+        type="submit"
+        className={style.btnSearch}
+      >
         Buscar
       </button>
     </form>
