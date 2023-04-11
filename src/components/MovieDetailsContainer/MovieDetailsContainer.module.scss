@@ -1,3 +1,73 @@
-.movieDetailsContainer{
-  background: red;
+.container{
+  display:flex;
+  justify-content: space-between;
+  gap: 60px;
+  background: rgb(28, 28, 28);
+  width: 70%;
+  min-height: calc(65vh - 82px);
+  margin: 50px 0;
+  border-radius: 20px;
+  padding: 80px;
+  line-height: 1;
+  animation: fadeIn .2s;
+  
+  .movieDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 50%;
+    
+    h3{
+      color: rgb(115, 115, 115);
+      font-weight: 600;
+    }
+    
+    .movieTitle{
+      font-size:3.5rem;
+    }
+
+    .plot{
+      margin-top:auto;
+    }
+
+    .infosContainer{
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .cardInfo{
+        max-width: 20%;
+      }
+    }
+  }
+
+  .poster{
+    object-fit: cover;
+    border-radius: 15px;
+    min-width: 390px;
+  }
+}
+
+.backArrow{
+  position: absolute;
+  font-size: 2rem;
+  color: rgb(176, 176, 176);
+  left: 30px;
+  transition: filter .2s;
+
+  &:hover{
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes fadeIn {
+  0%{
+    transform: scale(0.8);
+    opacity: 0.1;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
 }

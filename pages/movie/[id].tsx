@@ -25,8 +25,16 @@ export default function Movie() {
       })
   }, [router.query])
   return (
-    <>
+    <div
+      style={{
+        minHeight: 'calc(100vh - 82px)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+      }}
+    >
       <MovieDetailsContainer movieData={movieData} />
-    </>
+    </div>
   )
 }
