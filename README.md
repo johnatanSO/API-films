@@ -2,10 +2,10 @@
 
 <h3> 💻 Sobre o projeto</h3>
 
-<p>Essa é um projeto feito com React, que usa dados da RESTful API OMDb (https://www.omdbapi.com/) para listar informações de filmes, séries e jogos baseado no .</p>
+<p>Essa é um projeto construído com React que utiliza dados da API RESTful OMDb (https://www.omdbapi.com/) para buscar e listar informações de filmes, séries e jogos.</p>
 <p>📝 O sistema possui as funcionalidades de:</p>
  <li>Pesquisar filmes, séries ou jogos</li>
- <li>Ver informações</li>
+ <li>Ver informações detalhadas</li>
  <br>
  
  <h2>🖼 Imagem da tela principal: </h2>
