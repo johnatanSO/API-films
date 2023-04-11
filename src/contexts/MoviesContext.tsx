@@ -26,7 +26,7 @@ export function MoviesProvider({ children }: MoviesProviderProps) {
   const [pagination, setPagination] = useState<any>({
     page: 1,
     totalResults: 0,
-    totalPages: 0
+    totalPages: 0,
   })
 
   return (
