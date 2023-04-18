@@ -12,6 +12,7 @@
   padding: 4rem;
   line-height: 1;
   animation: fadeIn .2s;
+  position: relative;
   
   .movieDetails{
     display: flex;
@@ -95,10 +96,20 @@
 
 .backArrow{
   position: absolute;
-  font-size: 2rem;
   color: rgb(176, 176, 176);
   left: 30px;
+  top: 25px;
   transition: filter .2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  line-height: 1;
+  font-weight: 600;
+
+  .icon{
+    font-size: 1.7rem;
+  }
 
   &:hover{
     filter: brightness(1.5);
@@ -113,5 +124,27 @@
   100%{
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@media(max-width:935px){
+  .container{
+    flex-direction: column-reverse;
+    padding: 2rem;
+    position: static;
+  }
+  .movieDetails{
+    align-items: center;
+    text-align: center;
+  }
+  .backArrow{
+    top: 12px;
+  }
+  .poster{
+    min-width: 100% !important;
+    max-width: 100%;
+  }
+  .infosContainer{
+    justify-content: center !important;
   }
 }

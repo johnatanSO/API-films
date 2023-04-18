@@ -12,10 +12,11 @@ export function MovieDetailsContainer({
 }: MovieDetailsContainerProps) {
   return (
     <>
-      <Link className={style.backArrow} href="/">
-        <FontAwesomeIcon icon={faAngleLeft} />
-      </Link>
       <div className={style.container}>
+        <Link className={style.backArrow} href="/">
+          <FontAwesomeIcon className={style.icon} icon={faAngleLeft} />
+          Voltar
+        </Link>
         <div className={style.movieDetails}>
           <div className={style.duration}>
             <h3>
