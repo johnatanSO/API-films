@@ -10,3 +10,11 @@
     margin-bottom: 30px;
   }
 }
+
+@media (max-width: 935px) {
+  .errorContainer{
+    text-align: center;
+    padding: 50px;
+    font-size: 0.9rem;
+  }
+}

@@ -41,6 +41,12 @@ export function InputSearch() {
               secondaryMessage: 'Tente novamente',
             })
           }
+          if (res.data.Error === 'Too many results.') {
+            setError({
+              message: 'Muitos resultados foram encontrados nesta busca.',
+              secondaryMessage: 'Por favor, seja mais específico!',
+            })
+          }
         }
       })
       .catch((err: any) => {
